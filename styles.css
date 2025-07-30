@@ -23,6 +23,12 @@ h1 {
     color: var(--lightText);
 }
 
+input[type="text"] {
+    padding: 4px 8px;
+    border: none;
+    outline: none;
+}
+
 /* styles for components */
 
 .board {
@@ -34,8 +40,22 @@ h1 {
 }
 
 .board .left-side, .board .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 49%;
     height: 100%;
+}
+
+.board .left-side .sum-total, .board .right-side .sum-total {
+    margin-top: 1vh;
+    width: 70%;
+    text-align: right;
+    font-family: sans-serif;
+    font-size: calc(1vw + 2vh);
+    font-weight: bolder;
+    color: var(--lightText);
 }
 
 .board .line {
@@ -43,4 +63,20 @@ h1 {
     height: 90%;
     background-color: var(--lightText);
     border-radius: 4px;
+}
+
+.team-name {
+    width: 70%;
+    font-size: calc(2vw + 1vh);
+    background-color: transparent;
+    border-bottom: 1px solid gray !important;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 90%;
+    height: 70%;
+    border-bottom: 2px solid var(--lightText);
 }
