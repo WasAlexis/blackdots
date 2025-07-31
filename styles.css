@@ -1,7 +1,7 @@
 /* General styles for the main page */
 
 :root {
-    --lightText: #f7f7f7;
+    --darkText: #1E1B18;
     --lightGreenColor: #99e2b4;
 }
 
@@ -13,20 +13,34 @@
 /* static elements styles */
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100dvh;
     background-color: #78c6a3;
 }
 
-h1 {
+h1, span {
     font-family: sans-serif;
-    color: var(--lightText);
+    color: var(--darkText);
 }
 
-input[type="text"] {
+input[type="text"], input[type="number"] {
     padding: 4px 8px;
     border: none;
     outline: none;
+}
+
+/* Disable controllers */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 /* styles for components */
@@ -55,13 +69,13 @@ input[type="text"] {
     font-family: sans-serif;
     font-size: calc(1vw + 2vh);
     font-weight: bolder;
-    color: var(--lightText);
+    color: var(--darkText);
 }
 
 .board .line {
     width: 1%;
     height: 90%;
-    background-color: var(--lightText);
+    background-color: var(--darkText);
     border-radius: 4px;
 }
 
@@ -69,14 +83,26 @@ input[type="text"] {
     width: 70%;
     font-size: calc(2vw + 1vh);
     background-color: transparent;
-    border-bottom: 1px solid gray !important;
+    border-bottom: 1px solid var(--darkText) !important;
 }
 
 .history {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-end;
     width: 90%;
     height: 70%;
-    border-bottom: 2px solid var(--lightText);
+    border-bottom: 2px solid var(--darkText);
+}
+
+.history span {
+    margin-right: 12px;
+    font-size: calc(1vh + 1vh);
+}
+
+#box {
+    margin-top: 1vh;
+    width: 75%;
+    border-radius: 4px;
+    font-size: calc(2vw + 1vh);
 }
