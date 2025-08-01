@@ -15,6 +15,18 @@ const leftTeam = new team('left');
 const box = document.getElementById("box");
 const leftSum = document.getElementById("sum-left");
 const rightSum = document.getElementById("sum-right");
+const historyLeft = document.getElementById("left-team");
+const historyRight = document.getElementById("right-team");
+
+function addHistory(team, points) {
+    let node = document.createElement('span');
+    node.textContent = points;
+    if (team == leftTeam.teamName) {
+        historyLeft.appendChild(node)
+    } else {
+        historyRight.appendChild(node);
+    }
+}
 
 function addPoints(team) {
     let points = parseInt(box.value);
@@ -22,9 +34,12 @@ function addPoints(team) {
         return;
     }
 
+    addHistory(team, points);
+    
     if (team === rightTeam.teamName) {
         rightTeam.score.push(points);
         rightTeam.currentScore += points;
+        
     } else {
         leftTeam.score.push(points);
         leftTeam.currentScore += points;
