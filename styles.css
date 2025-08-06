@@ -1,7 +1,7 @@
 /* General styles for the main page */
 
 :root {
-    --darkText: #1E1B18;
+    --darkText: #343a40;
     --lightGreenColor: #99e2b4;
 }
 
@@ -83,7 +83,6 @@ input[type=number] {
     width: 70%;
     font-size: calc(2vw + 1vh);
     background-color: transparent;
-    border-bottom: 1px solid var(--darkText) !important;
 }
 
 .history {
@@ -104,5 +103,5 @@ input[type=number] {
     margin-top: 1vh;
     width: 75%;
     border-radius: 4px;
-    font-size: calc(2vw + 1vh);
+    font-size: calc(1vw + 2vh);
 }

@@ -47,7 +47,6 @@ function addPoints(team) {
     if (team === rightTeam.teamName) {
         rightTeam.score.push(points);
         rightTeam.currentScore += points;
-        
     } else {
         leftTeam.score.push(points);
         leftTeam.currentScore += points;
