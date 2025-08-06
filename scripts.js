@@ -22,9 +22,17 @@ function addHistory(team, points) {
     let node = document.createElement('span');
     node.textContent = points;
     if (team == leftTeam.teamName) {
-        historyLeft.appendChild(node)
+        if (historyLeft.hasChildNodes()) {
+            historyLeft.insertBefore(node, historyLeft.firstChild);
+        } else {
+            historyLeft.appendChild(node);
+        }
     } else {
-        historyRight.appendChild(node);
+        if (historyRight.hasChildNodes()) {
+            historyRight.insertBefore(node, historyRight.firstChild);
+        } else {
+            historyRight.appendChild(node);
+        }
     }
 }
 
