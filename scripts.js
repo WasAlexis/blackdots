@@ -85,3 +85,12 @@ function saveToLocalStorage() {
     localStorage.setItem('left-team', JSON.stringify(leftTeam));
     localStorage.setItem('right-team', JSON.stringify(rightTeam));
 }
+
+function resetGame() {
+    localStorage.clear();
+    rightTeam = new team();
+    leftTeam = new team();
+    historyRight.innerHTML = '';
+    historyLeft.innerHTML = '';
+    updateValues();
+}
