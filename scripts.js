@@ -72,7 +72,7 @@ function addPoints(team) {
         leftTeam.score.push(points);
         leftTeam.currentScore += points;
     }
-    saveToLocalStorage()
+    saveToLocalStorage();
     updateValues();
 }
 
@@ -88,8 +88,8 @@ function saveToLocalStorage() {
 
 function resetGame() {
     localStorage.clear();
-    rightTeam = new team();
-    leftTeam = new team();
+    rightTeam = new team('right');
+    leftTeam = new team('left');
     historyRight.innerHTML = '';
     historyLeft.innerHTML = '';
     updateValues();
