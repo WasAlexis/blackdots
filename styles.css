@@ -13,9 +13,6 @@
 /* static elements styles */
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
     height: 100dvh;
     background-color: #78c6a3;
@@ -27,6 +24,7 @@ h1, span {
 }
 
 input[type="text"], input[type="number"] {
+    box-sizing: border-box;
     padding: 4px 8px;
     border: none;
     outline: none;
@@ -73,7 +71,7 @@ input[type=number] {
 }
 
 .board .line {
-    width: 1%;
+    width: 2px;
     height: 90%;
     background-color: var(--darkText);
     border-radius: 4px;
@@ -100,23 +98,27 @@ input[type=number] {
 }
 
 #box {
-    width: 65%;
-    border-radius: 4px 0px 0px 4px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: calc(1vw + 3vh);
+    background-color: whitesmoke;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1vh auto;
+    width: 95%;
+    height: 40%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.numbers button {
+    margin: 1px;
+    border: 1px solid rgba(147, 210, 182, 0.7);
+    background-color: rgba(68, 162, 119, 0.1);
+    font-family: sans-serif;
+    font-weight: bolder;
     font-size: calc(1vw + 2vh);
-    background-color: whitesmoke;
-}
-
-.tools {
-    margin-top: 1vh;
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-}
-
-.tools button {
-    border: none;
-    outline: none;
-    width: 25%;
-    background-color: whitesmoke;
-    border-radius: 0px 4px 4px 0px;
 }
